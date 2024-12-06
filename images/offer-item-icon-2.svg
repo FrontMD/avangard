@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="16" height="18.416" viewBox="0 0 16 18.416">
+  <defs>
+    <clipPath id="clip-path">
+      <rect id="Прямоугольник_35" data-name="Прямоугольник 35" width="16" height="18.416" fill="none" stroke="#ff5353" stroke-width="1"/>
+    </clipPath>
+  </defs>
+  <g id="Сгруппировать_37" data-name="Сгруппировать 37" clip-path="url(#clip-path)">
+    <path id="Контур_57" data-name="Контур 57" d="M66.88,38.645l-2.474,4.993a.906.906,0,0,0-.026.749l4.2,10.173a.906.906,0,0,0,1.184.491l3.876-1.6,3.876-1.6a.906.906,0,0,0,.491-1.184l-4.2-10.173a.906.906,0,0,0-.547-.512L67.983,38.19A.906.906,0,0,0,66.88,38.645Z" transform="translate(-62.359 -36.984)" fill="none" stroke="#ff5353" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+    <path id="Контур_58" data-name="Контур 58" d="M174.335,110.2a1.063,1.063,0,1,0-.576,1.388A1.062,1.062,0,0,0,174.335,110.2Z" transform="translate(-167.06 -106.214)" fill="none" stroke="#ff5353" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+    <line id="Линия_5" data-name="Линия 5" y1="6.192" x2="2.57" transform="translate(7.662 7.712)" fill="none" stroke="#ff5353" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+    <path id="Контур_59" data-name="Контур 59" d="M190.581,294.761a.929.929,0,1,1-1.213-.5A.929.929,0,0,1,190.581,294.761Z" transform="translate(-183.062 -285.255)" fill="none" stroke="#ff5353" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+    <path id="Контур_60" data-name="Контур 60" d="M341.176,357.213a.929.929,0,1,1-1.214-.5A.929.929,0,0,1,341.176,357.213Z" transform="translate(-329.085 -345.812)" fill="none" stroke="#ff5353" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+    <path id="Контур_61" data-name="Контур 61" d="M11.164,132.664,9.42,134.506a.834.834,0,0,0-.225.651l.948,10.082a.834.834,0,0,0,.908.752l2.545-.239" transform="translate(-8.912 -128.637)" fill="none" stroke="#ff5353" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+    <path id="Контур_62" data-name="Контур 62" d="M42.781,12.788c-1.119-1.85-3.995-4.45-4.841-3.322-.618.824.885,2.056,2.381,2.824" transform="translate(-36.65 -8.913)" fill="none" stroke="#ff5353" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+  </g>
+</svg>
