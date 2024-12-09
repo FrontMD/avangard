@@ -3,9 +3,6 @@ let application = {
     init: function(params) {
         this.params = params;
 
-        // Формы
-        $('form[justwe-form]').tortikFormSender();
-
         this.popupsInit();
         this.popupsEventsInit();
 

@@ -1,4 +1,4 @@
-$(document).ready(function() {
+/*$(document).ready(function() {
     $('#stock-btn-1').click(function(event) {
         $('#stock__item-form-1').toggleClass('active');
     });
@@ -11,28 +11,25 @@ $(document).ready(function() {
     $('#stock-btn-4').click(function(event) {
         $('#stock__item-form-4').toggleClass('active');
     });
- })
+ })*/
 
 // intro slider
 $(document).ready(function() {
-const swiper = new Swiper('.swiper-intro', {
-   loop: true,
-   autoplay: {
-    delay: 10000,
-  },
-});
+    const swiper = new Swiper('.swiper-intro', {
+    loop: true,
+    autoplay: {
+        delay: 10000,
+    },
+    });
 })
 
 
 // select2
-    $(document).ready(function() {
+$(document).ready(function() {
     $('.js-example-basic-single').select2({
         width: '100%',
     });
-    })
-
-// range slider
-// sliderRange price
+})
 
 
 // tabs
@@ -209,9 +206,9 @@ $(document).ready(function(){
     })
 
     // Questions
-    $('.questions__item').justweAccordion({
+    /*$('.questions__item').justweAccordion({
         slideAnimation: true,
-    });
+    });*/
 
     // Main catalog items gallery
     const catalogCardGallery = new Swiper('.catalog-item-carousel', {
