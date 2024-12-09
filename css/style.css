@@ -330,12 +330,7 @@ section {
    text-transform: uppercase;
 }
 
-.intro__content {}
-
 .intro__box {
-   /* padding: 70px 0px 115px 40px;
-   background: url("../images/intro-box-bg.jpg") center no-repeat;
-   background-size: cover; */
    width: 100%;
    margin-bottom: 10px;
 }
@@ -1265,8 +1260,6 @@ section {
    margin-bottom: 80px;
 }
 
-.news__list-item {}
-
 .news__list-item>img {
    width: 100%;
    margin-bottom: 15px;
@@ -1910,7 +1903,6 @@ section {
    }
 
    .news__list {
-      -ms-grid-columns: (1fr)[2];
       grid-template-columns: repeat(2, 1fr);
    }
 
@@ -2271,7 +2263,6 @@ section {
    }
 
    .news__list {
-      -ms-grid-columns: (1fr)[1];
       grid-template-columns: repeat(1, 1fr);
    }
 
