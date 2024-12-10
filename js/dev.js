@@ -32,56 +32,13 @@ let application = {
 
                 this.testSwipe();
 
-                this.tabs();
             }
 
-            // Перключение табов
-            this.tabs = function() {
-                $('.js-change-tab').click(function(event) {
-                    event.preventDefault();
 
-                    let target = $(this).data('target');
-
-                    $('.js-tab').hide();
-                    $('.js-tab-' + target).show();
-                });
-            }
         
-            // Всплывающая форма в комплектации - кредит
-            this.modalComplectationCredit = function() {
-                let modalComplectationCredit = $('#popup-complectation-credit'),
-                    btnOpenCreditModal = $('[data-target="#popup-complectation-credit"]');
+            
         
-                btnOpenCreditModal.click(function() {
-                    modalComplectationCredit.find('input[name="mark"]').val( $(this).data('mark') );
-                    modalComplectationCredit.find('input[name="model"]').val( $(this).data('model') );
-                    modalComplectationCredit.find('input[name="complectation"]').val( $(this).data('complectation') );
-                    modalComplectationCredit.find('input[name="price"]').val( $(this).data('price') );
-                    modalComplectationCredit.find('input[name="car"]').val( $(this).data('car') );
-                    modalComplectationCredit.find('input[name="brand_id"]').val( $(this).data('mark-id') );
-                    modalComplectationCredit.find('input[name="model_id"]').val( $(this).data('model-id') );
-
-                    modalComplectationCredit.find('.js-car-name').text( $(this).data('car') );
-                    modalComplectationCredit.find('.js-car-preview').attr( 'src', $(this).data('preview') );
-                });
-            }
-        
-            // Расчет цены в комплектациях по чекбоксам
-            this.calculatePriceForComplectation = function() {
-                $('.js-check-credit, .js-check-tradein, .js-check-util').click(function() {
-                    parent = $(this).closest('.js-checked-table');
             
-                    var total = $(parent).data('price');
-            
-                    parent.find(".checkbox").each(function(index) {
-                        if ($(this).is(':checked') === true) {
-                            total = total - parseInt($(this).val());
-                        }
-                    }); 
-            
-                    $(parent).find('.js-inner-price').text(tortik.pf(total + ""));
-                });
-            }
         
             // Сравнение комплектаций
             this.complectationCompare = function() {
