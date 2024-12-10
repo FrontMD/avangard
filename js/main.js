@@ -139,74 +139,6 @@ $(document).ready(function(){
             }
         });
 
-        /*<script>
-        
-        
-        $(document).ready(function() {
-            var swiper = new Swiper(".swiper-gallery-2", {
-                spaceBetween: 5,
-                slidesPerView: 5,
-                freeMode: true,
-                watchSlidesProgress: true,
-                breakpoints: {
-                    370: {
-                        slidesPerView: 3,
-                        spaceBetween: 30
-                    },
-                    640: {
-                        slidesPerView: 5,
-                        spaceBetween: 40
-                    }
-                }
-            });
-            
-            var swiper2 = new Swiper(".swiper-gallery-1", {
-                spaceBetween: 10,
-                spaceBetween: 1,
-                autoHeight: true,
-                navigation: {
-                    nextEl: '.swiper-button-next',
-                    prevEl: '.swiper-button-prev',
-                },
-        
-                thumbs: {
-                    swiper: swiper,
-                },
-            });
-            
-            var swiper = new Swiper(".swiper-int-2", {
-                spaceBetween: 5,
-                slidesPerView: 5,
-                freeMode: true,
-                watchSlidesProgress: true,
-            });
-            
-            var swiper2 = new Swiper(".swiper-int-1", {
-                spaceBetween: 10,
-                spaceBetween: 1,
-                autoHeight: true,
-                navigation: {
-                    nextEl: '.swiper-button-next',
-                    prevEl: '.swiper-button-prev',
-                },
-        
-                thumbs: {
-                    swiper: swiper,
-                },
-            });
-        })
-        
-        $(document).ready(function() {
-            
-        });
-        
-        
-
-        $(document).ready(function() {
-            $("a.gallery-prem-slide").fancybox();
-        });
-    </script>*/
-
         // Свайп на фото тачки
         let touchstartX = 0,
             touchendX = 0,
@@ -252,7 +184,124 @@ $(document).ready(function(){
         }
     }
 
+    // галерея в карточке товара
+ 
+    if(document.querySelector(".swiper-gallery-1")) {
 
+        var swiper = new Swiper(".swiper-gallery-2", {
+            spaceBetween: 5,
+            slidesPerView: 5,
+            freeMode: true,
+            watchSlidesProgress: true,
+            breakpoints: {
+                370: {
+                    slidesPerView: 3,
+                    spaceBetween: 30
+                },
+                640: {
+                    slidesPerView: 5,
+                    spaceBetween: 40
+                }
+            }
+        });
+
+        var swiper2 = new Swiper(".swiper-gallery-1", {
+            spaceBetween: 10,
+            spaceBetween: 1,
+            autoHeight: true,
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+    
+            thumbs: {
+                swiper: swiper,
+            },
+        });
+    }
+
+    if(document.querySelector(".swiper-int-2")) {
+        var swiper = new Swiper(".swiper-int-2", {
+            spaceBetween: 5,
+            slidesPerView: 5,
+            freeMode: true,
+            watchSlidesProgress: true,
+            breakpoints: {
+                370: {
+                    slidesPerView: 3,
+                    spaceBetween: 30
+                },
+                640: {
+                    slidesPerView: 5,
+                    spaceBetween: 40
+                }
+            }
+        });
+
+        var swiper2 = new Swiper(".swiper-int-1", {
+            spaceBetween: 10,
+            spaceBetween: 1,
+            autoHeight: true,
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+    
+            thumbs: {
+                swiper: swiper,
+            },
+        });
+    }
+
+    // спойлеры вопрос-ответ
+    function spoilers() {
+        const accordions = document.querySelectorAll("[data-js='accordion']");
+    
+        if(accordions.length < 1) return
+    
+        accordions.forEach(accordion => {
+    
+            let firstSpoiler = accordion.querySelector('[data-js="spoiler"]')
+    
+            if(firstSpoiler) {
+                openSpoiler(firstSpoiler)
+            }
+    
+            accordion.addEventListener('click', (e) => {
+                let eventTarget = e.target
+    
+                if(eventTarget.closest('[data-js="spoiler"]')) {
+                    let clickedSpoiler = eventTarget.closest('[data-js="spoiler"]')
+    
+                    if(clickedSpoiler.classList.contains('active')) {
+                        return
+                    }
+    
+                    let spoilers = accordion.querySelectorAll('[data-js="spoiler"]')
+    
+                    spoilers.forEach(spoiler => {
+                        closeSpoiler(spoiler)
+                    })
+    
+                    openSpoiler(clickedSpoiler)
+                }
+            })
+        })
+    
+        function openSpoiler(spoiler) {
+            const content = $(spoiler).find('[data-js="spoilerContent"]');
+            spoiler.classList.add("active");
+            $(content).slideDown(400);
+        };
+    
+        function closeSpoiler(spoiler) {
+            const content = $(spoiler).find('[data-js="spoilerContent"]');
+            spoiler.classList.remove("active");
+            $(content).slideUp(400);
+        };
+    }
+
+    spoilers()
 
     // Всплывающая форма в комплектации - кредит    
     let modalComplectationCredit = $('#popup-complectation-credit'),
