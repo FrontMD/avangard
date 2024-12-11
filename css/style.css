@@ -3905,6 +3905,10 @@ section {
    color: #0C392D;
 }
 
+.tradein__form-check-item.active span {
+   color: white;
+}
+
 .tradein__form-check-item input {
    width: 0;
    height: 0;
