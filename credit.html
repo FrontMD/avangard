@@ -1355,7 +1355,7 @@
                     <h2>Получить предложение</h2>
 
                     <form method="POST" action="#" novalidate="" class="tradein__form js-form-credit-page"
-                        autocomplete="off">
+                        autocomplete="off" data-validate>
 
                         <input type="hidden" name="mark" value="">
                         <input type="hidden" name="model" value="">
@@ -1374,8 +1374,7 @@
 
                                     <div class="tradein__form-item">
                                         <select class="js-example-basic-single js-change-mark">
-                                            <option>Марка
-                                            </option>
+                                            <option>Марка</option>
                                             <option value="4">Hyundai</option>
                                             <option value="5">Datsun</option>
                                             <option value="6">KIA</option>
@@ -1433,28 +1432,12 @@
 
                                 <div class="tradein__form-col">
                                     <h3>Ваш первоначальный взнос</h3>
-                                    <div class="range__slider">
+                                    <div class="range__slider js-range-slider-wrap">
                                         <div class="range__slider-inner">
                                             <div class="extra-controls">
                                                 <input type="text" class="js-input" value="0">
                                             </div>
-                                            <div class="range-slider">
-                                                <span class="irs irs--flat js-irs-0"><span class="irs"><span
-                                                            class="irs-line" tabindex="0"></span><span class="irs-min"
-                                                            style="visibility: hidden;">0₽</span><span class="irs-max"
-                                                            style="visibility: visible;">1 500 000₽</span><span
-                                                            class="irs-from" style="visibility: hidden;">0</span><span
-                                                            class="irs-to" style="visibility: hidden;">0</span><span
-                                                            class="irs-single"
-                                                            style="left: -0.607227%;">0₽</span></span><span
-                                                        class="irs-grid"></span><span class="irs-bar irs-bar--single"
-                                                        style="left: 0px; width: 1.89573%;"></span><span
-                                                        class="irs-shadow shadow-single"
-                                                        style="display: none;"></span><span class="irs-handle single"
-                                                        style="left: 0%;"><i></i><i></i><i></i></span></span><input
-                                                    type="text" class="js-range-slider irs-hidden-input" value=""
-                                                    tabindex="-1" readonly="">
-                                            </div>
+                                            <div class="range-slider js-range-slider"></div>
                                         </div>
                                     </div>
                                 </div>
@@ -1528,13 +1511,14 @@
                         <div class="tradein__form-col">
                             <h3>Контактные данные</h3>
                             <div class="tradein__form-line">
-                                <div class="tradein__form-item">
-                                    <input name="name" type="text" placeholder="ФИО">
+                                <div class="tradein__form-item" data-js="formField">
+                                    <input name="name" type="text" placeholder="ФИО" data-type="letters" required>
                                 </div>
 
-                                <div class="tradein__form-item">
+                                <div class="tradein__form-item" data-js="formField">
                                     <input name="telephone" type="text" placeholder="+7 (___) ___-__-__"
-                                        autocomplete="new" onpaste="return false;">
+                                        autocomplete="new" onpaste="return false;" data-type="phoneNumber"
+                                        data-v-name="phone" required>
                                 </div>
 
                                 <div class="tradein__form-item" type="submit">
@@ -1543,12 +1527,12 @@
                             </div>
 
                             <div class="agreement-form-politics">
-                                <div class="filter-form__ch popup-new-form__label">
-                                    <input type="checkbox" checked="" id="fa51c706e5b3e13142dfbfccfe80a3a6"
-                                        class="checkbox filter-form__check">
-                                    <label for="fa51c706e5b3e13142dfbfccfe80a3a6"
-                                        class="filter-form__akpp small">Отправляя заявку вы соглашаетесь с <a
-                                            href="privacy.html" target="_blank">политикой обработки персональных
+                                <div class="filter-form__ch popup-new-form__label" data-js="formField">
+                                    <input type="checkbox" checked="" id="creditFormPrivacy"
+                                        class="checkbox filter-form__check" data-v-name="checkbox" required>
+                                    <label for="creditFormPrivacy" class="filter-form__akpp small">Отправляя заявку вы
+                                        соглашаетесь с <a href="privacy.html" target="_blank">политикой обработки
+                                            персональных
                                             данных</a></label>
                                 </div>
                             </div>
@@ -2006,13 +1990,13 @@
                     <form method="POST" action="#" novalidate="" class="banner__question-form" data-validate
                         autocomplete="off">
                         <div class="banner__question-form-row">
-                            <div class="banner__question-form-item">
-                                <input name="name" type="text" placeholder="ФИО">
+                            <div class="banner__question-form-item" data-js="formField">
+                                <input name="name" type="text" placeholder="ФИО" data-type="letters" required>
                             </div>
 
-                            <div class="banner__question-form-item">
+                            <div class="banner__question-form-item" data-js="formField">
                                 <input name="telephone" type="text" placeholder="+7 (___) ___-__-__" autocomplete="new"
-                                    onpaste="return false;" required>
+                                    onpaste="return false;" data-type="phoneNumber" data-v-name="phone" required>
                             </div>
 
                             <div class="banner__question-form-item">
@@ -2023,10 +2007,10 @@
                         </div>
 
                         <div class="agreement-form-politics">
-                            <div class="filter-form__ch popup-new-form__label">
-                                <input type="checkbox" checked="" required id="80320db7fe1e15f29644048dcf15e01b"
-                                    class="checkbox filter-form__check">
-                                <label for="80320db7fe1e15f29644048dcf15e01b" class="filter-form__akpp small">Отправляя
+                            <div class="filter-form__ch popup-new-form__label" data-js="formField">
+                                <input type="checkbox" checked="" required id="creditStocksPrivacy"
+                                    class="checkbox filter-form__check" data-v-name="checkbox" required>
+                                <label for="creditStocksPrivacy" class="filter-form__akpp small">Отправляя
                                     заявку вы соглашаетесь с <a href="privacy.html" target="_blank">политикой обработки
                                         персональных данных</a></label>
                             </div>

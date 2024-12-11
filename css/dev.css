@@ -230,7 +230,7 @@ label.has-error {
     display: inline-block;
     padding: 5px 10px;
     font-size: 75%;
-    background-color: #1bc539;
+    background-color: var(--c-accent);
     border-radius: 10px;
     color: #fff;
     font-weight: 700;
@@ -245,7 +245,7 @@ label.has-error {
 
 /* ÐšÑ€ÐµÐ´Ð¸Ñ‚Ð½Ð°Ñ Ñ„Ð¾Ñ€Ð¼Ð° */
 .tradein__form-check-item.active {
-    background: #5cd367;
+    background: var(--c-accent);
 }
 
 /* ÐŸÐ¾Ð»Ð¸Ñ‚Ð¸ÐºÐ° */
@@ -315,7 +315,7 @@ a.credit__banner-2 {
 
 /* Ð¡Ñ‚Ñ€Ð°Ð½Ð¸Ñ†Ð° Ð¼Ð¾Ð´ÐµÐ»Ð¸ */
 .model__price {
-    color: #1BC539;
+    color: var(--c-accent);
     margin-top: 5px;
 }
 
@@ -429,7 +429,7 @@ table.compare td.option_title {
     text-align: center;
     z-index: 10000;
     padding: 10px;
-    background-color: #1BC539;
+    background-color: var(--c-accent);
     color: #fff;
     font-size: 18px;
     font-weight: 600;
@@ -731,7 +731,7 @@ table.compare td.option_title {
 }
 
 .error_page .btn__page:hover {
-    background-color: #1BC539;
+    background-color: var(--c-accent);
     color: white;
 }
 

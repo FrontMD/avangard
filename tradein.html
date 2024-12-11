@@ -1333,23 +1333,12 @@
                     <h2>Обменяйте свой автомобиль на новый с максимальной выгодой</h2>
 
                     <form method="POST" action="#" novalidate="" class="tradein__form js-form-tradein-page"
-                        autocomplete="off">
-
-
-                        <input type="hidden" name="need_car_mark" value="">
-                        <input type="hidden" name="need_car_model" value="">
-                        <input type="hidden" name="need_car_name" value="">
-                        <input type="hidden" name="need_car_price" value="">
-                        <input type="hidden" name="need_car_year" value="">
-
-                        <input type="hidden" name="brand_id" value="">
-                        <input type="hidden" name="model_id" value="">
+                        autocomplete="off" data-validate>
 
                         <div class="tradein__form-inner">
                             <div class="tradein__form-content">
                                 <div class="tradein__form-col">
                                     <h3>Ваш будущий автомобиль</h3>
-
 
                                     <div class="tradein__form-item">
                                         <select class="js-example-basic-single js-change-mark">
@@ -1412,18 +1401,18 @@
                                 <div class="tradein__form-col">
                                     <h3>Ваш автомобиль для обмена</h3>
                                     <div class="tradein__form-row">
-                                        <div class="tradein__form-item">
-                                            <input type="text" placeholder="Марка">
+                                        <div class="tradein__form-item" data-js="formField">
+                                            <input type="text" placeholder="Марка" required>
                                         </div>
-                                        <div class="tradein__form-item">
-                                            <input type="text" placeholder="Модель">
+                                        <div class="tradein__form-item" data-js="formField">
+                                            <input type="text" placeholder="Модель" required>
                                         </div>
                                     </div>
-                                    <div class="tradein__form-item">
-                                        <input type="text" placeholder="Год выпуска">
+                                    <div class="tradein__form-item" data-js="formField">
+                                        <input type="text" placeholder="Год выпуска" required>
                                     </div>
-                                    <div class="tradein__form-item">
-                                        <input type="text" placeholder="Пробег">
+                                    <div class="tradein__form-item" data-js="formField">
+                                        <input type="text" placeholder="Пробег" required>
                                     </div>
                                 </div>
                             </div>
@@ -1449,13 +1438,14 @@
                         <div class="tradein__form-col">
                             <h3>Контактные данные</h3>
                             <div class="tradein__form-line">
-                                <div class="tradein__form-item">
-                                    <input name="name" type="text" placeholder="ФИО">
+                                <div class="tradein__form-item" data-js="formField">
+                                    <input name="name" type="text" placeholder="ФИО" data-type="letters" required>
                                 </div>
 
-                                <div class="tradein__form-item">
+                                <div class="tradein__form-item" data-js="formField">
                                     <input name="telephone" type="text" placeholder="+7 (___) ___-__-__"
-                                        autocomplete="new" onpaste="return false;">
+                                        autocomplete="new" onpaste="return false;" data-type="phoneNumber"
+                                        data-v-name="phone" required>
                                 </div>
 
                                 <div class="tradein__form-item">
@@ -1465,10 +1455,10 @@
                         </div>
 
                         <div class="agreement-form-politics">
-                            <div class="filter-form__ch popup-new-form__label">
-                                <input type="checkbox" checked="" id="5f7aa0e759a771c99f078486caf85fcb"
-                                    class="checkbox filter-form__check">
-                                <label for="5f7aa0e759a771c99f078486caf85fcb" class="filter-form__akpp small">Отправляя
+                            <div class="filter-form__ch popup-new-form__label" data-js="formField">
+                                <input type="checkbox" checked="" id="tradeinFormPrivacy"
+                                    class="checkbox filter-form__check" data-v-name="checkbox" required>
+                                <label for="tradeinFormPrivacy" class="filter-form__akpp small">Отправляя
                                     заявку вы соглашаетесь с <a href="privacy.html" target="_blank">политикой обработки
                                         персональных данных</a></label>
                             </div>
@@ -1518,16 +1508,16 @@
                 <h2>Помочь определиться с выбором?</h2>
                 <p>Оставьте Ваш номер, мы перезвоним, проконсультируем и <br> предложим персональные условия!</p>
 
-                <form method="POST" action="#" novalidate="" class="feedback__form" autocomplete="off">
+                <form method="POST" action="#" novalidate="" class="feedback__form" autocomplete="off" data-validate>
 
 
-                    <div class="feedback__item">
-                        <input name="name" type="text" placeholder="ФИО">
+                    <div class="feedback__item" data-js="formField">
+                        <input name="name" type="text" placeholder="ФИО" data-type="letters" required>
                     </div>
 
-                    <div class="feedback__item">
+                    <div class="feedback__item" data-js="formField">
                         <input name="telephone" type="text" placeholder="+7 (___) ___-__-__" autocomplete="new"
-                            onpaste="return false;">
+                            onpaste="return false;" data-type="phoneNumber" data-v-name="phone" required>
                     </div>
 
                     <button type="submit">
@@ -1535,10 +1525,10 @@
                     </button>
 
                     <div class="agreement-form-politics">
-                        <div class="filter-form__ch popup-new-form__label">
-                            <input type="checkbox" checked="" id="23d0c59e7b77e44d728f7c4f1e65c74d"
-                                class="checkbox filter-form__check">
-                            <label for="23d0c59e7b77e44d728f7c4f1e65c74d" class="filter-form__akpp small">Отправляя
+                        <div class="filter-form__ch popup-new-form__label" data-js="formField">
+                            <input type="checkbox" checked="" id="tradeinFeedbackFormPrivacy"
+                                class="checkbox filter-form__check" data-v-name="checkbox" required>
+                            <label for="tradeinFeedbackFormPrivacy" class="filter-form__akpp small">Отправляя
                                 заявку вы соглашаетесь с <a href="privacy.html" target="_blank">политикой обработки
                                     персональных данных</a></label>
                         </div>

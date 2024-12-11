@@ -84,12 +84,6 @@ $(document).ready(function() {
 })
 
 $(document).ready(function(){
-    
-    // Questions
-    /*$('.questions__item').justweAccordion({
-        slideAnimation: true,
-    });*/
-
     // Кнопка "Поробнее в акциях"
     $('.js-stock-btn').click(function(event) {
         event.preventDefault();
@@ -184,8 +178,33 @@ $(document).ready(function(){
         }
     }
 
+    // Сравнение комплектаций
+    let btnCompareComplectation = $('.js-btn-compare-complectation'),
+        compareCheckbox = $('.js-compare-checkbox'),
+        tableCompareComplectation = $('.js-table-compare-complectation')
+
+    if(btnCompareComplectation) {
+        btnCompareComplectation.click(function(event) {
+            let isOnceChecked = false
+
+            compareCheckbox.each((index,item) => {
+                if(item.checked) {
+                    isOnceChecked = true
+                }
+            })
+    
+            if(!isOnceChecked) {
+                alert('Выберите комплектацию');
+                event.preventDefault();
+                return; 
+            } else {
+                tableCompareComplectation.show()
+            }
+    
+        });
+    }
+
     // галерея в карточке товара
- 
     if(document.querySelector(".swiper-gallery-1")) {
 
         var swiper = new Swiper(".swiper-gallery-2", {
@@ -336,6 +355,64 @@ $(document).ready(function(){
         $(parent).find('.js-inner-price').text(new Intl.NumberFormat('ru-RU').format(total) + "");
     });
 
+    let form = $('.js-form-credit-page'),
+        sliderInitialPaymentInstance
+
+    if(form.length > 0) {
+        // Инициализация слайдера первоначального взноса
+        const initCreditPageInitialPaymentSlider = function(min, max) {
+            var $wrap = $(".js-range-slider-wrap")
+
+            var $range = $wrap.find(".js-range-slider"),
+                $input = $wrap.find(".js-input");
+    
+            $range.ionRangeSlider({
+                min: min,
+                max: max,
+                from: 0,
+                postfix: "₽",
+                step: 10000,
+    
+                onStart: function(data) {
+                    $input.prop("value", data.from + '₽');
+                },
+    
+                onUpdate: function (data) {
+                    $input.prop("value", data.from + '₽');
+                },
+    
+                onChange: function(data) {
+                    $input.prop("value", data.from + '₽');
+                }
+            });
+        
+            sliderInitialPaymentInstance = $range.data("ionRangeSlider");
+        
+            $input.on("change keyup", function() {
+                var val = $(this).prop("value");
+        
+                // validate
+                if (val < min) {
+                    val = min;
+                } else if (val > max) {
+                    val = max;
+                }
+        
+                sliderInitialPaymentInstance.update({
+                    from: parseInt(val)
+                });
+            });
+        }
+        initCreditPageInitialPaymentSlider(0, 1500000)
+    
+        // Чекбоксы с сроком кредита
+        let changeCreditTermCheckbox = $(form).find('.tradein__form-check-item');
+
+        changeCreditTermCheckbox.click(function() {
+            changeCreditTermCheckbox.removeClass('active');
+            $(this).addClass('active');
+        });
+    }
 
 
 });
